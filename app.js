@@ -55,9 +55,27 @@ function insertRecord(data){
   cell6.innerHTML = data.designation;
 
   let cell7 = newRow.insertCell(6);  
-  cell7.innerHTML = `<a href = "">view</a>
-                     <a href = "">Edit</a> 
-                     <a href = "">Delete</a>`
+  cell7.innerHTML = `<button class = "viewBtn" onClick = "onEdit(this)">view</button>
+                     <button class="updateBtn">update</button> 
+                     <button class="deleteBtn">delete</button>`
   
 
+}
+
+function onEdit(td) {
+    console.log("View btn");
+    let selectedRow = td.parentElement.parentElement;
+    console.log(selectedRow);
+    document.getElementById("uniqueId").value = selectedRow.cells[0].innerHTML;
+    document.getElementById("fullName").value = selectedRow.cells[1].innerHTML;
+
+    document.getElementById("age").value = selectedRow.cells[2].innerHTML;
+
+    document.getElementById("emailId").value = selectedRow.cells[3].innerHTML;
+
+    document.querySelector('input[name="gender1"]:checked').value = selectedRow.cells[4].innerHTML;
+
+    document.getElementById("designation").value = selectedRow.cells[5].innerHTML;
+
+    
 }
