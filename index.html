@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 class="heading1">Employee Portal</h1>
+
+    <div class="formDiv">
+        <form onsubmit="event.preventDefault()" action="" class="formStyle" onFormSubmit()>
+            <div class="uid">
+                <label for="uniqueId">Id</label>
+                <br>
+                <input type="number" name="" id="uniqueId" class="designInputBox">
+            </div>
+            <br>
+            <div class="fname">
+                <label for="fullName">Name</label>
+                <br>
+                <input type="text" name="" id="fullName" class="designInputBox">
+            </div>
+            <br>
+            <div>
+                <label for="age">Age</label>
+                <br>
+                <input type="number" name="" id="age" class="designInputBox">
+            </div>
+            <br>
+            <div>
+                <label for="emailId">Emial Id</label>
+                <br>
+                <input type="email" name="" id="emailId" class="designInputBox">
+
+            </div>
+
+            <br>
+            <div>
+                <label for="imageUrl">Image-Url</label>
+                <br>
+                <input type="file" name="" id="imageUrl" class="designInputBox">
+            </div>
+
+            <br>
+            <div class="gender">
+                <fieldset>
+                    <legend>Gender:</legend>
+                    <br>
+
+                    <div>
+                        <input type="radio" id="male" name="gender" value="">
+                        <label for="male">male</label>
+                    </div>
+
+
+                    <div>
+                        <input type="radio" id="female" name="gender" value="">
+                        <label for="female">Female</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="other" name="gender" value="">
+                        <label for="other">other</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <br>
+
+            <div>
+                <label for="designation">Designation:</label>
+                <select class="designInputBox" name="" id="designation">
+                    <option value="">Please choose an option</option>
+                    <option value="developer">Developer</option>
+                    <option value="tester">Tester</option>
+                    <option value="manager">Manager</option>
+                    <option value="hr">Hr</option>
+                </select>
+
+            </div>
+            <br>
+
+
+            <div class="btns">
+                <button type="submit" onclick="formSubmit()" class="addBtnDesign">Add</button>
+                <button type="clear" class="clearBtnDesign">clear</button>
+
+            </div>
+
+
+
+
+        </form>
+    </div>
+
+    <div>
+        <table border="1" style="border-collapse: collapse;" id="employeeDetails">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email Id</th>
+                <th>Gender</th>
+                <th>Designation</th>
+                <th>Action</th>
+
+            </tr>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Aniket</td>
+                    <td>21</td>
+                    <td>aniketmourya77@gmail.com</td>
+                    <td>Male</td>
+                    <td>Developer</td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>sk</td>
+                    <td>21</td>
+                    <td>mourya77@gmail.com</td>
+                    <td>f</td>
+                    <td>Developer</td>
+                    <td></td>
+
+                </tr>
+            </tbody>
+
+
+        </table>
+
+    </div>
+
+
+
+
+
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
