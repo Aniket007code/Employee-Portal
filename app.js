@@ -19,9 +19,13 @@ function readFormData() {
     formData["fullName"] = document.getElementById("fullName").value
     formData["age"] = document.getElementById("age").value
     formData["emailId"] = document.getElementById("emailId").value
-    formData["gender"] =  document.querySelector('input[name="gender"]:checked')
+    formData["gender"] =  document.querySelector('input[name="gender1"]:checked').value;
     formData["designation"] = document.getElementById("designation").value
+    formData["action"] = document.getElementById("designation")
+
+
     // formData["fullName"] = document.getElementById("fullName").value
+    // console.log(formData["gender"]);
 
 
 
@@ -49,6 +53,11 @@ function insertRecord(data){
 
   let cell6 = newRow.insertCell(5);
   cell6.innerHTML = data.designation;
+
+  let cell7 = newRow.insertCell(6);  
+  cell7.innerHTML = `<a href = "">view</a>
+                     <a href = "">Edit</a> 
+                     <a href = "">Delete</a>`
   
 
 }
