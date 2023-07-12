@@ -12,20 +12,20 @@
     <h1 class="heading1">Employee Portal</h1>
 
     <div class="formDiv">
-        <form onsubmit="event.preventDefault()" action="" class="formStyle" onFormSubmit()>
+        <form onsubmit="event.preventDefault();formSubmit();" action="" class="formStyle">
             <div class="uid">
                 <label for="uniqueId">Id</label>
                 <br>
                 <input type="number" name="" id="uniqueId" class="designInputBox">
             </div>
-            
+
             <br>
             <div class="fname">
                 <label for="fullName">Name</label>
                 <br>
                 <input type="text" name="" id="fullName" class="designInputBox">
             </div>
-            
+
             <br>
             <div>
                 <label for="age">Age</label>
@@ -49,26 +49,27 @@
 
             <br>
             <div class="gender" id="gender2">
-                <fieldset>
-                    <legend>Gender:</legend>
+                <!-- <fieldset> -->
+                    <!-- <legend>Gender:</legend> -->
+                    <p>Gender</p>
                     <br>
 
-                    <div>
-                        <input type="radio" id="male" name="gender1" value="male">
+                    
+                        <input type="radio" id="male" name="gender111" value="male">
                         <label for="male">male</label>
-                    </div>
+                    
 
 
-                    <div>
-                        <input type="radio" id="female" name="gender1" value="female">
+                    
+                        <input type="radio" id="female" name="gender111" value="female">
                         <label for="female">Female</label>
-                    </div>
+                    
 
-                    <div>
-                        <input type="radio" id="other" name="gender1" value="other">
+                    
+                        <input type="radio" id="other" name="gender111" value="other">
                         <label for="other">other</label>
-                    </div>
-                </fieldset>
+                    
+                <!-- </fieldset> -->
             </div>
 
             <br>
@@ -85,16 +86,11 @@
 
             </div>
             <br>
-
-
             <div class="btns">
-                <button type="submit" onclick="formSubmit()" class="addBtnDesign">Add</button>
+                <button type="submit" class="addBtnDesign">Add</button>
                 <button type="clear" class="clearBtnDesign">clear</button>
 
             </div>
-
-
-
 
         </form>
     </div>
