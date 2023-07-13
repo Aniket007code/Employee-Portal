@@ -10,130 +10,176 @@
 
 <body>
     <h1 class="heading1">Employee Portal</h1>
+    <main class="main">
+        <div class="left">
+            <div class="formDiv">
+                <form onsubmit="event.preventDefault();formSubmit();" action="" class="formStyle">
+                    <!-- <div class="try"> -->
+                    <div class="uid">
+                        <label for="uniqueId">Id</label>
+                        <br>
+                        <input type="number" name="" id="uniqueId" class="designInputBox" required>
+                    </div>
 
-    <div class="formDiv">
-        <form onsubmit="event.preventDefault();formSubmit();" action="" class="formStyle">
-            <div class="uid">
-                <label for="uniqueId">Id</label>
-                <br>
-                <input type="number" name="" id="uniqueId" class="designInputBox">
-            </div>
-
-            <br>
-            <div class="fname">
-                <label for="fullName">Name</label>
-                <br>
-                <input type="text" name="" id="fullName" class="designInputBox">
-            </div>
-
-            <br>
-            <div>
-                <label for="age">Age</label>
-                <br>
-                <input type="number" name="" id="age" class="designInputBox">
-            </div>
-            <br>
-            <div>
-                <label for="emailId">Emial Id</label>
-                <br>
-                <input type="email" name="" id="emailId" class="designInputBox">
-
-            </div>
-
-            <br>
-            <div>
-                <label for="imageUrl">Image-Url</label>
-                <br>
-                <input type="file" name="" id="imageUrl" class="designInputBox">
-            </div>
-
-            <br>
-            <div class="gender" id="gender2">
-                <!-- <fieldset> -->
-                    <!-- <legend>Gender:</legend> -->
-                    <p>Gender</p>
                     <br>
+                    <div class="fname">
+                        <label for="fullName">Name</label>
+                        <br>
+                        <input type="text" name="" id="fullName" class="designInputBox" pattern="[A-Za-z]{2}+" required>
+                    </div>
 
-                    
+                    <br>
+                    <div>
+                        <label for="age">Age</label>
+                        <br>
+                        <input type="number" name="" id="age" class="designInputBox" min="18" max="60" required>
+                    </div>
+                    <!-- </div> -->
+                    <br>
+                    <div>
+                        <label for="emailId">Emial Id</label>
+                        <br>
+                        <input type="email" name="" id="emailId" class="designInputBox"
+                            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+
+                    </div>
+
+                    <br>
+                    <div>
+                        <label for="imageUrl">Image-Url</label>
+                        <br>
+                        <input type="text" name="" id="imgUrl" class="designInputBox" required>
+                    </div>
+
+                    <br>
+                    <div class="gender" id="gender2">
+                        <!-- <fieldset> -->
+                        <!-- <legend>Gender:</legend> -->
+                        <p>Gender</p>
+                        <br>
+
+
                         <input type="radio" id="male" name="gender111" value="male">
                         <label for="male">male</label>
-                    
+                        <br>
 
 
-                    
+
+
                         <input type="radio" id="female" name="gender111" value="female">
                         <label for="female">Female</label>
-                    
+                        <br>
 
-                    
+
+
                         <input type="radio" id="other" name="gender111" value="other">
                         <label for="other">other</label>
-                    
-                <!-- </fieldset> -->
+                        <br>
+
+                        <!-- </fieldset> -->
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="designation">Designation:</label><br>
+                        <select class="designInputBox" name="" id="designation" required>
+                            <option value="">Please choose an option</option>
+                            <option value="developer">Developer</option>
+                            <option value="tester">Tester</option>
+                            <option value="manager">Manager</option>
+                            <option value="hr">Hr</option>
+                        </select>
+
+                    </div>
+                    <br>
+                    <div class="btns">
+                        <button type="submit" class="addBtnDesign">Add</button>
+                        <button type="clear" onclick="resetForm()" class="clearBtnDesign">clear</button>
+
+                    </div>
+
+                </form>
             </div>
+        </div>
 
-            <br>
-
-            <div>
-                <label for="designation">Designation:</label>
-                <select class="designInputBox" name="" id="designation">
-                    <option value="">Please choose an option</option>
-                    <option value="developer">Developer</option>
-                    <option value="tester">Tester</option>
-                    <option value="manager">Manager</option>
-                    <option value="hr">Hr</option>
-                </select>
-
-            </div>
-            <br>
-            <div class="btns">
-                <button type="submit" class="addBtnDesign">Add</button>
-                <button type="clear" class="clearBtnDesign">clear</button>
-
-            </div>
-
-        </form>
-    </div>
-
-    <div>
-        <table border="1" style="border-collapse: collapse;" id="employeeDetails">
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Email Id</th>
-                <th>Gender</th>
-                <th>Designation</th>
-                <th>Action</th>
-
-            </tr>
-            <tbody>
+       <div class="right">
+        <div>
+            <table border="1" style="border-collapse: collapse;" id="employeeDetails">
                 <tr>
-                    <td>1</td>
-                    <td>Aniket</td>
-                    <td>21</td>
-                    <td>aniketmourya77@gmail.com</td>
-                    <td>Male</td>
-                    <td>Developer</td>
-                    <td></td>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email Id</th>
+                    <th>Gender</th>
+                    <th>Designation</th>
+                    <th>Action</th>
 
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>sk</td>
-                    <td>21</td>
-                    <td>mourya77@gmail.com</td>
-                    <td>f</td>
-                    <td>Developer</td>
-                    <td></td>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Aniket</td>
+                        <td>21</td>
+                        <td>aniketmourya77@gmail.com</td>
+                        <td>Male</td>
+                        <td>Developer</td>
+                        <td></td>
 
-                </tr>
-            </tbody>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>sk</td>
+                        <td>21</td>
+                        <td>mourya77@gmail.com</td>
+                        <td>f</td>
+                        <td>Developer</td>
+                        <td></td>
+
+                    </tr>
+                </tbody>
 
 
-        </table>
+            </table>
 
+            <!-- <button onclick="openDialog()">Open Dialog</button> -->
+
+
+            <div id="dialog" class="dialog">
+                <div class="dialog-content">
+                    <div class="image-section" id="id7">
+
+                    </div>
+                    <div class="data-section">
+                        <h2>Employee Details</h2>
+                        <span>uniqueId : </span><span id="id1"></span>
+                        <br>
+                        <span>Name : </span><span id="id2"></span>
+                        <br>
+                        <span>Age : </span><span id="id3"></span>
+                        <br>
+                        <span>Email Id : </span><span id="id4"></span>
+                        <br>
+                        <span>Gender : </span><span id="id5"></span>
+                        <br>
+                        <span>Designation : </span><span id="id6"></span>
+                        <br>
+
+
+
+
+
+
+
+                    </div>
+                    <button onclick="closeDialog()">Close</button>
+                </div>
+            </div>
+        </div>
+
+        </div>
     </div>
+    </main>
 
 
 

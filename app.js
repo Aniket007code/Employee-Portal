@@ -18,10 +18,12 @@ function formSubmit(){
         updateRecord(newFormData);
 
     }
-    resetForm()
 
+ 
+
+   
+    
 }
-
 
 function readFormData() {
     var formData = {};
@@ -31,13 +33,14 @@ function readFormData() {
     formData["emailId"] = document.getElementById("emailId").value
     formData["gender"] =  document.querySelector('input[name=gender111]:checked').value;  //('input[name="gender1"]:checked').value;
     formData["designation"] = document.getElementById("designation").value
+    // formData["imgUrl"] = document.getElementById("imgUrl").value  
+    
+
     
 
 
     // formData["fullName"] = document.getElementById("fullName").value
     // console.log(formData["gender"]);
-
-
 
 
     return formData;
@@ -92,6 +95,8 @@ function onEdit(td) {
 
 
     document.getElementById("designation").value = selectedRow.cells[5].innerHTML;
+    // document.getElementById("imgUrl").value = selectedRow.cells[6].innerHTML;
+
 
     
 
@@ -113,39 +118,79 @@ function updateRecord(newFormData) {
 
 
     selectedRow.cells[5].innerHTML = newFormData.designation;
-    
-}
-
-function onView(){
-    console.log("view element");
-
-}
-
-function resetForm(){
-    document.getElementById("uniqueId").value = "";
-    document.getElementById("fullName").value = "";
-    document.getElementById("age").value = "";
-    document.getElementById("emailId").value = "";
-    document.querySelector('input[name=gender111]:checked').value="";
-    document.getElementById("designation").value = "";
-    selectedRow = null;
-    //ider wo checked ko false kar
-    // document.querySelector('input[name=gender111]:checked=false')
-    document.querySelector('input[name="gender111"]:checked').checked = false;
-   
+    // selectedRow.cells[6].innerHTML = newFormData.imgUrl;
 
     
-
 }
 
+function onView(newFormData){
+    // console.log("view element");
+    // let alertData = readFormData()
+    openDialog();
+    resetForm();
 
+       var newData3 = readFormData();
+    // console.log(newData3)
+
+}
 
 function onDelete(td) {
     console.log("delete btn");
     row = td.parentElement.parentElement;
     document.getElementById("employeeDetails").deleteRow(row.rowIndex);
     resetForm();
+}
 
 
-    
+
+
+
+
+function openDialog() {
+
+    var dialog = document.getElementById('dialog');
+    dialog.style.display = 'block';
+    var openData1 = readFormData();
+
+    console.log(openData1.imgUrl);
+    document.getElementById("id1").innerHTML = openData1.uniqueId;
+    document.getElementById("id2").innerHTML = openData1.fullName;
+    document.getElementById("id3").innerHTML = openData1.age;
+    document.getElementById("id4").innerHTML = openData1.emailId;
+    document.getElementById("id5").innerHTML = openData1.gender;
+    document.getElementById("id6").innerHTML = openData1.designation;
+    document.getElementById("id7").innerHTML = `<img src='${openData1.imgUrl}'>`;
+
+
+
+
+
+
+
+   
+}
+
+function closeDialog() {
+    var dialog = document.getElementById('dialog');
+    dialog.style.display = 'none';
+}
+
+
+
+function resetForm(){
+    document.getElementById("uniqueId").value = "";
+    document.getElementById("fullName").value = "";
+    document.getElementById("age").value = "";
+    document.getElementById("emailId").value = "";
+    document.querySelector('input[name="gender111"]:checked').checked = false;
+    document.getElementById("designation").value = "";
+    // document.getElementById("imgUrl").value = "";
+
+
+    selectedRow = null;
+    //ider wo checked ko false kar
+    // document.querySelector('input[name=gender111]:checked=false')
+
+    // document.querySelector('input[name=gender111]:checked').value="";
+   
 }
